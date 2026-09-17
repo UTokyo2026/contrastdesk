@@ -4,7 +4,7 @@
 
 Check every color pairing in your palette against WCAG 2 contrast thresholds. Preview text and export a report.
 
-[Open the app](https://utokyo2026.github.io/contrastdesk/) · [Download offline HTML](https://github.com/UTokyo2026/contrastdesk/releases/latest) · [简体中文](README.zh-CN.md)
+[Open the app](https://sq2100.com/contrastdesk/) · [Download offline HTML](https://github.com/sq2100/contrastdesk/releases/latest) · [简体中文](README.zh-CN.md)
 
 ![ContrastDesk example](docs/demo.png)
 
@@ -20,7 +20,7 @@ No uploads, account, API key, tracking scripts, or runtime CDN dependencies. The
 
 ## Quick start
 
-Open the [hosted app](https://utokyo2026.github.io/contrastdesk/) and click **Try an example**. Or download the HTML from [Releases](https://github.com/UTokyo2026/contrastdesk/releases/latest), then open it in a modern desktop browser.
+Open the [hosted app](https://sq2100.com/contrastdesk/) and click **Try an example**. Or download the HTML from [Releases](https://github.com/sq2100/contrastdesk/releases/latest), then open it in a modern desktop browser.
 
 To build from source (Node.js 20.19+):
 

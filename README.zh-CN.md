@@ -2,7 +2,7 @@
 
 检查调色板各组合的 WCAG 2 对比度，并预览文字效果。
 
-[在线使用](https://utokyo2026.github.io/contrastdesk/) · [下载离线网页](https://github.com/UTokyo2026/contrastdesk/releases/latest) · [完整英文说明](README.md)
+[在线使用](https://sq2100.com/contrastdesk/) · [下载离线网页](https://github.com/sq2100/contrastdesk/releases/latest) · [完整英文说明](README.md)
 
 ![演示界面](docs/demo.png)
 
