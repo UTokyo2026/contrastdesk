@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!--POLICY-->
+    <title>
+      ContrastDesk — Check every color pairing in your palette against WCAG 2
+      contrast thresholds
+    </title>
+    <meta
+      name="description"
+      content="Check every color pairing in your palette against WCAG 2 contrast thresholds. Preview text and export a report."
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%239b582d'/%3E%3Ctext x='32' y='44' font-size='39' text-anchor='middle' fill='white' font-family='Arial'%3EC%3C/text%3E%3C/svg%3E"
+    />
+    <!--STYLE-->
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand"
+        ><span class="brandmark" aria-hidden="true">◐</span>ContrastDesk</a
+      >
+      <nav class="nav">
+        <button class="text-button desktop" id="privacy">Local & private</button
+        ><a
+          href="https://github.com/UTokyo2026/contrastdesk/blob/main/README.zh-CN.md"
+          target="_blank"
+          rel="noreferrer"
+          >中文说明</a
+        ><a
+          href="https://github.com/UTokyo2026/contrastdesk"
+          target="_blank"
+          rel="noreferrer"
+          >GitHub ↗</a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">DESIGN / MAKE IT READABLE</p>
+          <h1>Beautiful colors.<br />Readable together.</h1>
+          <p class="intro">
+            Check every color pairing in your palette against WCAG 2 contrast
+            thresholds. Preview text and export a report.
+          </p>
+        </div>
+        <div class="hero-note" aria-hidden="true">
+          <strong>◐</strong><span>LOCAL BY DESIGN</span>
+        </div>
+      </section>
+      <section class="workbench" aria-label="ContrastDesk workspace">
+        <div class="workbar">
+          <span>01 / YOUR WORKSPACE</span
+          ><button id="demo" class="text-button">Try an example ↗</button>
+        </div>
+        <div class="grid sidebar">
+          <div class="pane">
+            <div class="labelrow">
+              <label for="source">Palette / name: #hex</label>
+            </div>
+            <textarea
+              id="source"
+              spellcheck="false"
+              placeholder="Paste palette / name: #hex here…"
+            ></textarea>
+          </div>
+          <div class="pane">
+            <div class="field-row">
+              <label class="field"
+                ><span>Text color</span
+                ><select id="foreground"></select></label
+              ><label class="field"
+                ><span>Background</span
+                ><select id="background"></select
+              ></label>
+            </div>
+            <div id="preview" class="preview-card">
+              <h2>Words worth reading.</h2>
+              <p>A thoughtful palette should make room for everyone.</p>
+            </div>
+            <p class="hint" id="preview-ratio">
+              Run a palette to see its contrast ratio.
+            </p>
+            <label class="field"
+              ><span>Suggested text color target</span
+              ><select id="target">
+                <option value="4.5">AA normal / 4.5:1</option>
+                <option value="7">AAA normal / 7:1</option>
+                <option value="3">AA large / 3:1</option>
+              </select></label
+            >
+            <p class="hint" id="suggestion"></p>
+          </div>
+        </div>
+        <div class="actions">
+          <p class="hint">
+            No uploads. No account. No changes to your source files.
+          </p>
+          <div class="group">
+            <button id="run" class="primary">Check palette →</button>
+          </div>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </section>
+      <section class="results">
+        <div class="result-head">
+          <h2>02 / Your result</h2>
+          <div class="group">
+            <button id="export" data-export disabled>
+              Download contrast CSV ↓</button
+            ><button id="css" data-export disabled>
+              Download CSS tokens ↓
+            </button>
+          </div>
+        </div>
+        <div id="stats" class="stats"></div>
+        <div id="output">
+          <div class="empty">
+            Your results will appear here.<br />Try the example to see what this
+            tool can do.
+          </div>
+        </div>
+      </section>
+      <section class="guide">
+        <article>
+          <h3>
+            01 / Every palette pairing checked without rounded-threshold errors
+          </h3>
+          <p>
+            Check design tokens before using them for body text and page
+            backgrounds.
+          </p>
+        </article>
+        <article>
+          <h3>02 / Live text preview and a suggested readable foreground</h3>
+          <p>Everything is processed inside this browser tab.</p>
+        </article>
+        <article>
+          <h3>03 / Named CSS tokens and full contrast CSV exports</h3>
+          <p>Take the result with you. No account or subscription required.</p>
+        </article>
+      </section>
+      <details class="details">
+        <summary>Scope, formats and limitations</summary>
+        <p>
+          Uses WCAG 2 relative luminance and contrast for opaque sRGB hex
+          colors; not APCA. Normal-text AA is 4.5:1, AAA is 7:1, and large-text
+          AA is 3:1. Large text is at least 18 pt or 14 pt bold. Values shown
+          are rounded, but pass/fail uses the unrounded ratio. Does not assess
+          gradients, transparency, images, fonts, nontext controls or complete
+          site accessibility. Suggestions mix toward black or white; they are
+          not globally optimal color adjustments. 2–24 colors.
+        </p>
+      </details>
+    </main>
+    <footer>
+      <span>ContrastDesk · A small tool for a real task.</span
+      ><span
+        ><a href="https://github.com/UTokyo2026/contrastdesk">Open source</a> ·
+        MIT · Works offline after download</span
+      >
+    </footer>
+    <dialog id="privacy-dialog">
+      <h2>Your data stays here.</h2>
+      <p>
+        Processing happens in this browser tab. This app has no analytics,
+        server processing, remote scripts or persistent app storage. Downloads
+        contain the data you choose to export.
+      </p>
+      <p>
+        A hosted page still exposes normal request metadata to its host.
+        Download the standalone HTML and open it offline for disconnected use.
+        Browser extensions and your device are outside the app’s control.
+      </p>
+      <button id="close-privacy">Got it</button>
+    </dialog>
+    <noscript>JavaScript is required for local processing.</noscript
+    ><!--SCRIPT-->
+  </body>
+</html>
